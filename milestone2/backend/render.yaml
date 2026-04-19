@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: milestone2-backend
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn agent:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: TAVILY_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: VITE_API_URL
+        fromService:
+          name: milestone2-frontend
+          type: web
+          property: url

@@ -149,3 +149,72 @@ These limitations highlight opportunities for future integration of embedding-ba
 
 This project is intended for academic and educational purposes.
 
+---
+
+# 🤖 Milestone 2: Agentic AI Research Assistant
+
+A multi-agent autonomous research pipeline powered by **LangGraph** and **Tavily API**. Unlike Milestone 1, this system uses Large Language Models and intelligent agents to perform deep reasoning, web retrieval, and synthesis.
+
+## 🚀 Milestone 2 Overview
+
+The Agentic Assistant automates the entire research process:
+1.  **Autonomous Search**: Uses Tavily API to fetch top-tier academic and web sources.
+2.  **Intelligent Retrieval**: Scrapes and cleans content from URLs.
+3.  **Contextual Summarization**: Summarizes document chunks while preserving technical nuances.
+4.  **Deep Reasoning**: Synthesizes multiple summaries into cohesive insights.
+5.  **Validation Node**: Checks for contradictions or uncertainties in the gathered data.
+6.  **Structured Reporting**: Generates a professional report (Markdown & PDF).
+
+## 🏗 Milestone 2 Architecture
+
+The system uses a directed graph (LangGraph) with the following nodes:
+- `search_node`: Fetches relevant URLs.
+- `retrieve_node`: Scrapes web content.
+- `summarize_node`: Processes document chunks.
+- `reason_node`: Synthesizes insights.
+- `validate_node`: Performance quality control.
+- `report_node`: Formats the final research document.
+
+## ⚙️ Tech Stack
+
+- **Backend**: Python, FastAPI, LangGraph, LangChain, Tavily API, OpenAI/Groq.
+- **Frontend**: React.js, Tailwind CSS, Vite, Lucide Icons.
+- **Export**: PDF generation using `fpdf2`.
+
+## 📂 Structure
+
+```text
+milestone2/
+├── backend/
+│   ├── agent.py         # FastAPI Entry Point
+│   ├── graph.py         # LangGraph Workflow
+│   ├── nodes/           # Individual Logic Nodes
+│   └── utils/           # PDF Generation & Utilities
+├── frontend/            # React/Vite UI
+└── requirements.txt     # Backend Dependencies
+```
+
+## 🛠 Setup & Local Run
+
+### Backend
+1. `cd milestone2/backend`
+2. `pip install -r requirements.txt`
+3. Set environment variables in `.env`:
+   ```env
+   TAVILY_API_KEY=your_key
+   OPENAI_API_KEY=your_key
+   ```
+4. `python agent.py` (Runs on port 8000)
+
+### Frontend
+1. `cd milestone2/frontend`
+2. `npm install`
+3. `npm run dev` (Runs on port 5173)
+
+---
+
+## 🌐 Public Deployment
+
+- **Backend (Render)**: [Link to Backend]
+- **Frontend (Vercel)**: [Link to Frontend]
+
