@@ -3,8 +3,8 @@ import uuid
 from fastapi import FastAPI, HTTPException, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from .graph import create_graph
-from .utils.pdf_generator import generate_pdf
+from graph import create_graph
+from utils.pdf_generator import generate_pdf
 from fastapi.responses import FileResponse
 from dotenv import load_dotenv
 

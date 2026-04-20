@@ -1,0 +1,78 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\title{\textbf{Milestone 2: Agentic AI Research Assistant}}
+\author{Autonomous AI Engineer}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This report details the implementation of Milestone 2, which extends a traditional NLP system into an advanced Agentic AI Research Assistant. Utilizing LangGraph for multi-agent orchestration, the system performs autonomous web searching, content retrieval, reasoning, and validation to generate high-quality research reports.
+\end{abstract}
+
+\section{Introduction}
+The objective of Milestone 2 was to transition from a classical NLP pipeline to an intelligent, agent-based autonomous system. The assistant is designed to handle open-ended research queries by scouring the web, synthesizing information, and ensuring factual consistency through a series of specialized nodes.
+
+\section{System Architecture}
+The core of the system is built on a \textbf{StateGraph} using LangGraph. The graph manages the flow of information through several key nodes:
+
+\begin{itemize}
+    \item \textbf{Search Node}: Leverages the Tavily API to identify the most relevant academic and web sources.
+    \item \textbf{Retrieve Node}: Scrapes and cleans text content from the identified URLs.
+    \item \textbf{Summarize Node}: Uses Large Language Models (LLMs) to condense document segments.
+    \item \textbf{Reason Node}: Synthesizes summaries into cohesive insights and findings.
+    \item \textbf{Validate Node}: Detects contradictions, uncertainties, or gaps in the synthesized data.
+    \item \textbf{Report Node}: Formats the final results into a structured JSON and Markdown report.
+\end{itemize}
+
+\section{Technical Implementation}
+
+\subsection{Backend}
+The backend is implemented using \textbf{FastAPI} and integrates \textbf{LangChain} for model interactions. Environment variables are used to securely manage API keys for Tavily and OpenAI/Groq.
+
+\subsection{Frontend}
+The user interface is a premium \textbf{React} application built with \textbf{Vite}. It features a modern dark-themed aesthetic with glassmorphism components and real-time state feedback.
+
+\subsection{PDF Export}
+A custom PDF generation utility was implemented using the \texttt{fpdf2} library, allowing users to download a formal version of the generated research reports.
+
+\section{Deployment}
+The system is architected for cloud deployment:
+\begin{itemize}
+    \item \textbf{Backend}: Deployed on Render using a blueprint configuration (\texttt{render.yaml}).
+    \item \textbf{Frontend}: Deployed on Vercel with optimized static build settings (\texttt{vercel.json}).
+\end{itemize}
+
+\section{Conclusion}
+Milestone 2 successfully demonstrates the power of agentic workflows in automating complex research tasks. By combining structured state management with autonomous reasoning, the system provides a significant leap forward in AI-assisted information synthesis.
+
+\end{document}

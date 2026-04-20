@@ -1,11 +1,11 @@
 from typing import TypedDict, List, Dict, Any
 from langgraph.graph import StateGraph, END
-from .nodes.search_node import search_node
-from .nodes.retrieve_node import retrieve_node
-from .nodes.summarize_node import summarize_node
-from .nodes.reason_node import reason_node
-from .nodes.validate_node import validate_node
-from .nodes.report_node import report_node
+from nodes.search_node import search_node
+from nodes.retrieve_node import retrieve_node
+from nodes.summarize_node import summarize_node
+from nodes.reason_node import reason_node
+from nodes.validate_node import validate_node
+from nodes.report_node import report_node
 
 class AgentState(TypedDict):
     query: str
