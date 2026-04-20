@@ -1,0 +1,7 @@
+{
+  "name": "aiml-project-root",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npm install --prefix milestone2/frontend && npm run build --prefix milestone2/frontend"
+  }
+}

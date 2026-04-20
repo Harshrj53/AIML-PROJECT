@@ -1,0 +1,11 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "framework": "vite",
+  "buildCommand": "npm install --prefix milestone2/frontend && npm run build --prefix milestone2/frontend",
+  "outputDirectory": "milestone2/frontend/dist"
+}
